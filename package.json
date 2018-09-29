@@ -1,6 +1,6 @@
 {
   "name": "input-events-recorder",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Input events recorder and replayer",
   "main": "src//index.js",
   "scripts": {
