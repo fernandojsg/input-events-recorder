@@ -148,7 +148,7 @@ function simulateMouseEvent(element, eventType, parameters) {
 
 // var mouseDiv;
 export class InputReplayer {
-  constructor(element) {
+  constructor(element, recording) {
     /*
     KeystrokeVisualizer.enable({unmodifiedKey: false});
     mouseDiv = document.createElement('div');
@@ -160,7 +160,7 @@ export class InputReplayer {
     element.parentNode.appendChild(mouseDiv);
     */
     this.element = element;
-    this.recording = recording2;
+    this.recording = recording;
     this.currentIndex = 0;
   }
 
