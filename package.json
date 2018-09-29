@@ -1,0 +1,30 @@
+{
+  "name": "input-events-recorder",
+  "version": "1.0.0",
+  "description": "Input events recorder and replayer",
+  "main": "build/input-events-recorder.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "concurrently --names \"ROLLUP,SERVER\" -c \"bgGreen.bold,bgBlue.bold\" \"rollup -c -w -m inline\" \"http-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandojsg/input-events-recorder.git"
+  },
+  "author": "Fernando Serrano <fernandojsg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fernandojsg/input-events-recorder/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-cleanup": "^3.0.0",
+    "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-node-resolve": "^3.4.0"
+  },
+  "homepage": "https://github.com/fernandojsg/input-events-recorder#readme"
+}
