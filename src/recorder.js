@@ -12,7 +12,7 @@ export class InputRecorder {
   constructor(element, options) {
     this.element = element;
     this.clear();
-    this.options = options;
+    this.options = options || {};
   }
 
   enable(forceReset) {
@@ -53,23 +53,23 @@ export class InputRecorder {
   }
   
   injectListeners() {
-    this.element.addEventListener("mousedown", evt => {
+    this.element.addEventListener('mousedown', evt => {
       var pos = computeNormalizedPos(this.element, evt);
       this.addEvent('mouse', 'down', {x: pos[0], y: pos[1], button: evt.button});
     });
   
-    this.element.addEventListener("mouseup", evt => {
+    this.element.addEventListener('mouseup', evt => {
       var pos = computeNormalizedPos(this.element, evt);
       this.addEvent('mouse', 'up', {x: pos[0], y: pos[1], button: evt.button});
     });
   
-    this.element.addEventListener("mousemove", evt => {
+    this.element.addEventListener('mousemove', evt => {
       var pos = computeNormalizedPos(this.element, evt);
       this.addEvent('mouse', 'move', {x: pos[0], y: pos[1], button: evt.button});
 
     });
   
-    this.element.addEventListener("wheel", evt => {
+    this.element.addEventListener('wheel', evt => {
       this.addEvent('mouse', 'wheel', {
         deltaX: evt.deltaX,
         deltaY: evt.deltaY,
@@ -78,7 +78,7 @@ export class InputRecorder {
       });
     });
   
-    window.addEventListener("keydown", evt => {
+    window.addEventListener('keydown', evt => {
       this.addEvent('key', 'down', {
         keyCode: evt.keyCode,
         charCode: evt.charCode,
@@ -86,7 +86,7 @@ export class InputRecorder {
       });
     });
   
-    window.addEventListener("keyup", evt => {
+    window.addEventListener('keyup', evt => {
       this.addEvent('key', 'up', {
         keyCode: evt.keyCode,
         charCode: evt.charCode,
